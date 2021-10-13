@@ -1,0 +1,34 @@
+{
+    "name": "alzpk/restcountries-php-api-wrapper",
+    "description": "Restcountries.com API PHP wrapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "alzpk",
+            "email": "mh1986@outlook.dk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Alzpk\\RestCountriesPhpApiWrapper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alzpk\\RestCountriesPhpApiWrapper\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "7.4.x-dev",
+        "ext-json": "*"
+    },
+    "require-dev": {
+    "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    }
+}
