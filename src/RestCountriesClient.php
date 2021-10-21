@@ -4,84 +4,69 @@ declare(strict_types=1);
 
 namespace Alzpk\RestCountriesPhpApiWrapper;
 
-use Alzpk\RestCountriesPhpApiWrapper\Models\Country;
 use GuzzleHttp\Client;
 
 final class RestCountriesClient implements ClientInterface
 {
-    CONST baseUri = 'https://restcountries.eu';
+    CONST baseUri = 'https://restcountries.com';
 
     private Client $client;
+    private string $apiVersion;
 
     public function __construct()
     {
+        $this->apiVersion = 'v3.1';
         $this->client = new Client([
             'base_uri' => self::baseUri
         ]);
     }
 
-    /** @return list<Country> */
     public function all(): array
     {
-        return $this->request("/rest/v2/all");
+        return $this->request("/{$this->apiVersion}/all");
     }
 
-    /** @return list<Country> */
-    public function name(string $name): array
+    public function searchByName(string $name): array
     {
-        return $this->request("/rest/v2/name/{$name}");
+        return $this->request("/{$this->apiVersion}/name/{$name}");
     }
 
-    /** @return list<Country> */
-    public function code(string $code): array
+    public function searchByCode(string $code): array
     {
-        return $this->request("/rest/v2/alpha/{$code}");
+        return $this->request("/{$this->apiVersion}/alpha/{$code}");
     }
 
-    /** @return list<Country> */
-    public function codes(array $codes): array
+    public function searchByCodes(array $codes): array
     {
         $stringedCodes = implode(';', $codes);
-        return $this->request("/rest/v2/alpha?codes={$stringedCodes}");
+        return $this->request("/{$this->apiVersion}/alpha?codes={$stringedCodes}");
     }
 
-    /** @return list<Country> */
-    public function currency(string $currency): array
+    public function searchByCurrency(string $currency): array
     {
-        return $this->request("/rest/v2/currency/{$currency}");
+        return $this->request("/{$this->apiVersion}/currency/{$currency}");
     }
 
-    /** @return list<Country> */
-    public function language(string $language): array
+    public function searchByLanguage(string $language): array
     {
-        return $this->request("/rest/v2/lang/{$language}");
+        return $this->request("/{$this->apiVersion}/lang/{$language}");
     }
 
-    /** @return list<Country> */
-    public function capital(string $capital): array
+    public function searchByCapital(string $capital): array
     {
-        return $this->request("/rest/v2/capital/{$capital}");
+        return $this->request("/{$this->apiVersion}/capital/{$capital}");
     }
 
-    /** @return list<Country> */
-    public function callingCode(string $callingCode): array
+    public function searchByRegion(string $region): array
     {
-        return $this->request("/rest/v2/callingcode/{$callingCode}");
+        return $this->request("/{$this->apiVersion}/region/{$region}");
     }
 
-    /** @return list<Country> */
-    public function region(string $region): array
+    public function searchBySubregion(string $subregion): array
     {
-        return $this->request("/rest/v2/region/{$region}");
+        return $this->request("/{$this->apiVersion}/subregion/{$subregion}");
     }
 
-    /** @return list<Country> */
-    public function regionalBloc(string $regionalBloc): array
-    {
-        return $this->request("/rest/v2/regionalbloc/{$regionalBloc}");
-    }
-
-    /** @return list<Country> */
     private function request(string $endpoint): array
     {
         $response = $this->client
@@ -89,8 +74,6 @@ final class RestCountriesClient implements ClientInterface
             ->getBody()
             ->getContents();
 
-        return array_map(function (array $response) {
-            return Country::fromResponse($response);
-        }, json_decode($response, true));
+        return json_decode($response, true);
     }
 }

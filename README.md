@@ -26,7 +26,7 @@ $client = new \Alzpk\RestCountriesPhpApiWrapper\RestCountriesClient();
 $countries = $client->all();
 
 // Fetch countries by searching names
-$countries = $client->name('Denmark');
+$countries = $client->searchByName('Denmark');
 ```
 
 ## Client Map

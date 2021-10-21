@@ -2,37 +2,23 @@
 
 namespace Alzpk\RestCountriesPhpApiWrapper;
 
-use Alzpk\RestCountriesPhpApiWrapper\Models\Country;
-
 interface ClientInterface
 {
-    /** @return list<Country> */
     public function all(): array;
 
-    /** @return list<Country> */
-    public function name(string $name): array;
+    public function searchByName(string $name): array;
 
-    /** @return list<Country> */
-    public function code(string $code): array;
+    public function searchByCode(string $code): array;
 
-    /** @return list<Country> */
-    public function codes(array $codes): array;
+    public function searchByCodes(array $codes): array;
 
-    /** @return list<Country> */
-    public function currency(string $currency): array;
+    public function searchByCurrency(string $currency): array;
 
-    /** @return list<Country> */
-    public function language(string $language): array;
+    public function searchByLanguage(string $language): array;
 
-    /** @return list<Country> */
-    public function capital(string $capital): array;
+    public function searchByCapital(string $capital): array;
 
-    /** @return list<Country> */
-    public function callingCode(string $callingCode): array;
+    public function searchByRegion(string $region): array;
 
-    /** @return list<Country> */
-    public function region(string $region): array;
-
-    /** @return list<Country> */
-    public function regionalBloc(string $regionalBloc): array;
+    public function searchBySubregion(string $subregion): array;
 }
