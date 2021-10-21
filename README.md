@@ -42,3 +42,7 @@ $countries = $client->searchByName('Denmark');
 | _capital_ | (string) Country capital | ```$client->capital('Copenhagen');``` |
 | _region_ | (string) Country region | ```$client->region('Europe');``` |
 | _subregion_ | (string) Country subregion | ```$client->subregion('South');``` |
+
+## More info
+
+_Check https://github.com/amatosg/restcountries for more info_
