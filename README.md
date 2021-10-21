@@ -45,4 +45,4 @@ $countries = $client->searchByName('Denmark');
 
 ## More info
 
-_Check https://github.com/amatosg/restcountries for more info_
+_Check https://github.com/amatosg/restcountries for more info._
