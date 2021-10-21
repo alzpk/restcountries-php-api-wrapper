@@ -1,5 +1,4 @@
 # PHP wrapper for Restcountries.com API
-PHP wrapper for restcountries.com API, that returns a model with value objects, based on the response from the API.
 
 ## Requirements
 
