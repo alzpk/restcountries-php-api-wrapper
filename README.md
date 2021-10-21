@@ -34,14 +34,14 @@ $countries = $client->searchByName('Denmark');
 | Method | Params | Example |
 |---|---|---|
 | _all_ |  | ```$client->all();``` |
-| _name_ | (string) Country name | ```$client->name('Denmark');``` |
-| _code_ | (string) Country code | ```$client->code('208');``` |
-| _codes_ | (array) List of country codes | ```$client->codes(['208', '209']);``` |
-| _currency_ | (string) Country currency | ```$client->curency('DKK');``` |
-| _language_ | (string) Country language | ```$client->language('da');``` |
-| _capital_ | (string) Country capital | ```$client->capital('Copenhagen');``` |
-| _region_ | (string) Country region | ```$client->region('Europe');``` |
-| _subregion_ | (string) Country subregion | ```$client->subregion('South');``` |
+| _searchByName_ | (string) Country name | ```$client->searchByName('Denmark');``` |
+| _searchByCode_ | (string) Country code | ```$client->searchByCode('208');``` |
+| _searchByCodes_ | (array) List of country codes | ```$client->searchByCodes(['208', '209']);``` |
+| _searchByCurrency_ | (string) Country currency | ```$client->searchByCurrency('DKK');``` |
+| _searchByLanguage_ | (string) Country language | ```$client->searchByLanguage('da');``` |
+| _searchByCapital_ | (string) Country capital | ```$client->searchByCapital('Copenhagen');``` |
+| _searchByRegion_ | (string) Country region | ```$client->searchByRegion('Europe');``` |
+| _searchBySubregion_ | (string) Country subregion | ```$client->searchBySubregion('South');``` |
 
 ## More info
 
