@@ -96,17 +96,6 @@ class RestCountriesClientTest extends TestCase
      * @test
      * @dataProvider dataProvider
      */
-    public function it_can_get_countries_by_calling_code(ClientInterface $client)
-    {
-        $countries = $client->searchByCode('45');
-
-        $this->assertIsArray($countries);
-    }
-
-    /**
-     * @test
-     * @dataProvider dataProvider
-     */
     public function it_can_get_countries_by_region(ClientInterface $client)
     {
         $countries = $client->searchByRegion('Europe');

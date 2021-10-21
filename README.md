@@ -39,9 +39,6 @@ $countries = $client->searchByName('Denmark');
 | _codes_ | (array) List of country codes | ```$client->codes(['208', '209']);``` |
 | _currency_ | (string) Country currency | ```$client->curency('DKK');``` |
 | _language_ | (string) Country language | ```$client->language('da');``` |
-| _callingCode_ | (string) Country calling code | ```$client->callingCode('45');``` |
+| _capital_ | (string) Country capital | ```$client->capital('Copenhagen');``` |
 | _region_ | (string) Country region | ```$client->region('Europe');``` |
-| _regionalBloc_ | (string) Country regional block | ```$client->regionalBloc('EU');``` |
-
-## Testing
-The package comes with individual tests for models, value objects and wrapper.
+| _subregion_ | (string) Country subregion | ```$client->subregion('South');``` |
