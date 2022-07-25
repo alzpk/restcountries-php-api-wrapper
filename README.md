@@ -4,7 +4,7 @@
 
 ```json
 {
-  "php": "^7.4",
+  "php": "^7.4|^8.0",
   "guzzlehttp/guzzle": "7.4.x-dev",
   "ext-json": "*"
 }
